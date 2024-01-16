@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import GlobalStyle from '@styles/global-styles';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 
@@ -8,6 +9,7 @@ import Footer from '@components/Footer';
 const App: React.FC = () => {
   return (
     <div className="App">
+      <GlobalStyle />
       <Header />
       <Footer />
     </div>
