@@ -1,7 +1,27 @@
 import React from 'react';
+import styled from 'styled-components';
+import Container from '@components/Container';
 
-const Footer: React.FC = () => {
-  return <div>여기가 풋터</div>;
+const FooterWrap = styled.footer`
+  display: flex;
+  align-items: center;
+  height: 60px;
+  border-top: 1px solid ${({ theme }) => theme.colors.lightgray};
+  p {
+    font-size: 14px;
+    color: ${({ theme }) => theme.colors.black};
+    font-weight: 300;
+    text-align: center;
+  }
+`;
+const Footer = () => {
+  return (
+    <FooterWrap>
+      <Container>
+        <p>&copy;copyright all right reserved.</p>
+      </Container>
+    </FooterWrap>
+  );
 };
 
 export default Footer;

@@ -1,22 +1,29 @@
 import React from 'react';
-import { Desktop, Tablet, Mobile } from '@styles/mediaQuery';
-import styled, { ThemeProvider } from 'styled-components';
-import theme from '@styles/theme';
-// import media from '@styles/media';
+
+import styled from 'styled-components';
+import HeaderLogo from '@components/HeaderLogo';
+import Gnb from '@components/Gnb';
 
 const HeaderWrap = styled.header`
-  display: flex;
-  background: ${({ theme }) => theme.colors.red};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightgray};
 `;
-const Header: React.FC = () => {
+
+const HeaderInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  padding: 40px 0 0 0;
+`;
+
+const Header = () => {
   return (
-    <ThemeProvider theme={{ ...theme }}>
-      <HeaderWrap>
-        <Desktop>Desktop</Desktop>
-        <Tablet>Tablet</Tablet>
-        <Mobile>Mobile</Mobile>
-      </HeaderWrap>
-    </ThemeProvider>
+    <HeaderWrap>
+      <HeaderInner>
+        <HeaderLogo />
+        <Gnb />
+      </HeaderInner>
+    </HeaderWrap>
   );
 };
 

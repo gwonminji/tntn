@@ -1,18 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import { ThemeProvider } from 'styled-components';
+import theme from '@styles/theme';
 import './App.css';
 import GlobalStyle from '@styles/global-styles';
+
+import Layout from '@components/Layout';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
+import Contents from '@components/Contents';
 
-// let data = {};
-const App: React.FC = () => {
+const App = () => {
   return (
-    <div className="App">
+    <>
       <GlobalStyle />
-      <Header />
-      <Footer />
-    </div>
+      <ThemeProvider theme={{ ...theme }}>
+        <Layout>
+          <Header />
+          <Contents />
+          <Footer />
+        </Layout>
+      </ThemeProvider>
+    </>
   );
 };
 

@@ -3,9 +3,20 @@ export interface Props {
 }
 
 const colors: Props = {
-  black: '#000000',
-  grey: '#999999',
-  red: '#ff0000',
+  blue: '#0047AB',
+  lightblue: '#F0F8FF',
+  white: '#fff',
+  whitesmoke: '#f4f4f4',
+  babypowder: '#FEFEFA',
+  black: '#222',
+  gray: '#999',
+  lightgray: '#E5E4E2',
+};
+
+const containerWidth = {
+  desktop: '1280px',
+  tablet: '100%',
+  mobile: '100%',
 };
 
 const tabletFontSize: Props = {
@@ -16,6 +27,7 @@ const tabletFontSize: Props = {
 
 const theme = {
   colors,
+  containerWidth,
   tabletFontSize,
 };
 
