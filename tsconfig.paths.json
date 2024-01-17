@@ -6,7 +6,7 @@
       "@assets/*": ["assets/*"],
       "@atoms/*": ["components/atoms/*"],
       "@blocks/*": ["components/blocks/*"],
-      "@pages/*": ["components/pages/*"],
+      "@pages/*": ["pages/*"],
       "@hooks/*": ["hooks/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"],

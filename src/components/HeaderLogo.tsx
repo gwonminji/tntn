@@ -1,24 +1,23 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { Desktop, Tablet, Mobile } from '@styles/mediaQuery';
 import styled from 'styled-components';
 
 import logo from '@assets/images/logo.png';
 
-const DesktopHeaderLogoWrap = styled.a`
-  display: block;
+const DesktopHeaderLogoWrap = styled.div`
   max-width: 282px;
   margin: 0 auto;
 `;
 
-const TabletHeaderLogoWrap = styled.a`
-  display: block;
+const TabletHeaderLogoWrap = styled.div`
   max-width: 240px;
   margin: 0 auto;
 `;
 
-const MobileHeaderLogoWrap = styled.a`
-  display: block;
+const MobileHeaderLogoWrap = styled.div`
   max-width: 200px;
   margin: 0 auto;
 `;
@@ -33,19 +32,25 @@ const HeaderLogo = () => {
   return (
     <>
       <Desktop>
-        <DesktopHeaderLogoWrap href="#" title="메인으로 이동">
-          <LogoImg src={logo} alt="튼튼" />
-        </DesktopHeaderLogoWrap>
+        <Link to={'/'} title="메인으로 이동">
+          <DesktopHeaderLogoWrap>
+            <LogoImg src={logo} alt="튼튼" />
+          </DesktopHeaderLogoWrap>
+        </Link>
       </Desktop>
       <Tablet>
-        <TabletHeaderLogoWrap href="#" title="메인으로 이동">
-          <LogoImg src={logo} alt="튼튼" />
-        </TabletHeaderLogoWrap>
+        <Link to={'/'} title="메인으로 이동">
+          <TabletHeaderLogoWrap>
+            <LogoImg src={logo} alt="튼튼" />
+          </TabletHeaderLogoWrap>
+        </Link>
       </Tablet>
       <Mobile>
-        <MobileHeaderLogoWrap href="#" title="메인으로 이동">
-          <LogoImg src={logo} alt="튼튼" />
-        </MobileHeaderLogoWrap>
+        <Link to={'/'} title="메인으로 이동">
+          <MobileHeaderLogoWrap>
+            <LogoImg src={logo} alt="튼튼" />
+          </MobileHeaderLogoWrap>
+        </Link>
       </Mobile>
     </>
   );
