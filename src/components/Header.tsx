@@ -7,6 +7,9 @@ import styled from 'styled-components';
 import HeaderLogo from '@components/HeaderLogo';
 import Gnb from '@components/Gnb';
 
+import { FaBars } from 'react-icons/fa6';
+import { FaXmark } from 'react-icons/fa6';
+
 const HeaderWrap = styled.header`
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightgray};
 `;
@@ -28,9 +31,14 @@ const HeaderInner = styled.div`
 `;
 
 const Btn = styled.button`
-  width: 30px;
-  height: 30px;
-  background: red;
+  width: 40px;
+  height: 40px;
+  // border: 1px solid ${({ theme }) => theme.colors.gray};
+  svg {
+    width: 100%;
+    height: 100%;
+    color: ${({ theme }) => theme.colors.blue};
+  }
 `;
 
 const Header = () => {
@@ -52,7 +60,7 @@ const Header = () => {
         </Tablet>
         <Mobile>
           {gnb && <Gnb />}
-          <Btn onClick={onClickGnb} />
+          <Btn onClick={onClickGnb}>{gnb ? <FaXmark /> : <FaBars />}</Btn>
         </Mobile>
       </HeaderInner>
     </HeaderWrap>

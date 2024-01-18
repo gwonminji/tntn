@@ -3,13 +3,14 @@ import styled from 'styled-components';
 
 const GnbWrap = styled.nav`
   @media ${({ theme }) => theme.mediaQuery.mobile} {
+    padding: 80px;
     position: absolute;
     top: 100px;
     height: calc(100vh - 100px);
     left: 0;
     right: 0;
     z-index: 9999;
-    background: ${({ theme }) => theme.colors.blue};
+    background: ${({ theme }) => theme.colors.lightgray};
   }
 `;
 
@@ -42,6 +43,11 @@ const GnbText = styled.a`
   }
   @media ${({ theme }) => theme.mediaQuery.tablet} {
     font-size: 16px;
+  }
+  @media ${({ theme }) => theme.mediaQuery.mobile} {
+    height: 52px;
+    line-height: 52px;
+    font-size: 20px;
   }
 `;
 

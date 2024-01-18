@@ -14,6 +14,12 @@ const GlobalStyle = createGlobalStyle`
       a{
         text-decoration: none;
       }
+      button{
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+      }
 
       @media only screen and (max-width: 768px) {
         body {
