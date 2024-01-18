@@ -1,8 +1,5 @@
-import React from 'react';
-
 import { Link } from 'react-router-dom';
 
-import { DeviceQuery } from '@styles/deviceQuery_back';
 import styled from 'styled-components';
 
 import logo from '@assets/images/logo.png';

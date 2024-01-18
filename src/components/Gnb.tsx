@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const GnbWrap = styled.nav`
@@ -46,22 +45,35 @@ const GnbText = styled.a`
   }
 `;
 
-const menu = [
-  '체력인증 측정',
-  '운동처방',
-  '근골격계 운동',
-  '생애주기별 표준운동',
-  '목적별 루틴운동',
-  '운동처방 가이드',
-];
 const Gnb = () => {
+  type Menu = {
+    id: number;
+    name: string;
+  }[];
+  const menus: Menu = [
+    { id: 0, name: '체력인증 측정' },
+    { id: 1, name: '운동처방' },
+    { id: 2, name: '근골격계 운동' },
+    { id: 3, name: '생애주기별 표준운동' },
+    { id: 4, name: '목적별 루틴운동' },
+    { id: 5, name: '운동처방 가이드' },
+  ];
+
+  const [gnb, setGnb] = useState<Menu>([]);
+  useEffect(() => {
+    setGnb(menus);
+    console.log(menus);
+  }, []);
+  useEffect(() => {
+    console.log('gnb update', gnb);
+  }, [gnb]);
   return (
     <GnbWrap>
       <GnbList>
-        {menu.map((d, i) => (
-          <GnbItem key={i}>
-            <GnbText href="#" title={d}>
-              {d}
+        {gnb.map((menu) => (
+          <GnbItem key={menu.id}>
+            <GnbText href="#" title={menu.name}>
+              {menu.name}
             </GnbText>
           </GnbItem>
         ))}
