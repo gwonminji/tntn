@@ -1,44 +1,34 @@
-import React from 'react';
+import { WrapperProps } from '@model/component';
 
-import { Desktop, Tablet, Mobile } from '@styles/mediaQuery';
+import { DeviceQuery } from '@styles/deviceQuery_back';
 import styled from 'styled-components';
 
-type WrapperProps = {
-  children: React.ReactNode;
-};
+const ContainerWrap = styled.div`
+  width: 100%;
+  max-width: ${({ theme }) => theme.containerWidth.desktop};
+  margin: 0 auto;
+  padding: 0 ${({ theme }) => theme.containerPadding.desktop};
 
-const DesktopContainer = styled.div`
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-`;
-const TabletContainer = styled.div`
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 40px;
-`;
-const MobileContainer = styled.div`
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
+  @media ${({ theme }) => theme.mediaQuery.tablet} {
+    max-width: ${({ theme }) => theme.containerWidth.tablet};
+    padding: 0 ${({ theme }) => theme.containerPadding.tablet};
+  }
+
+  @media ${({ theme }) => theme.mediaQuery.mobile} {
+    max-width: ${({ theme }) => theme.containerWidth.mobile};
+    padding: 0 ${({ theme }) => theme.containerPadding.mobile};
+  }
+
+  // ${DeviceQuery.tablet`
+  //   max-width: 100%;
+  // `}
+  // ${DeviceQuery.mobile`
+  //   max-width: 100%;
+  //   padding: 0 20px;
+  // `}
 `;
 const Container = ({ children }: WrapperProps) => {
-  return (
-    <>
-      <Desktop>
-        <DesktopContainer>{children}</DesktopContainer>
-      </Desktop>
-      <Tablet>
-        <TabletContainer>{children}</TabletContainer>
-      </Tablet>
-      <Mobile>
-        <MobileContainer>{children}</MobileContainer>
-      </Mobile>
-    </>
-  );
+  return <ContainerWrap>{children}</ContainerWrap>;
 };
 
 export default Container;

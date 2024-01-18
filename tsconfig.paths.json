@@ -8,6 +8,7 @@
       "@blocks/*": ["components/blocks/*"],
       "@pages/*": ["pages/*"],
       "@hooks/*": ["hooks/*"],
+      "@model/*": ["model/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"],
       "@components/*": ["components/*"]

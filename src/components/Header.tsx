@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { DeviceQuery } from '@styles/deviceQuery_back';
+import { Desktop, Tablet, Mobile } from '@styles/mediaQuery';
 
 import styled from 'styled-components';
 import HeaderLogo from '@components/HeaderLogo';
@@ -14,14 +17,43 @@ const HeaderInner = styled.div`
   justify-content: space-between;
   height: 200px;
   padding: 40px 0 0 0;
+
+  @media ${({ theme }) => theme.mediaQuery.mobile} {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    padding: 0 20px;
+  }
+`;
+
+const Btn = styled.button`
+  width: 30px;
+  height: 30px;
+  background: red;
 `;
 
 const Header = () => {
+  const [gnb, setGnb] = useState(false);
+
+  const onClickGnb = () => {
+    setGnb(!gnb);
+    console.log(gnb);
+  };
   return (
     <HeaderWrap>
       <HeaderInner>
         <HeaderLogo />
-        <Gnb />
+        <Desktop>
+          <Gnb />
+        </Desktop>
+        <Tablet>
+          <Gnb />
+        </Tablet>
+        <Mobile>
+          {gnb && <Gnb />}
+          <Btn onClick={onClickGnb} />
+        </Mobile>
       </HeaderInner>
     </HeaderWrap>
   );

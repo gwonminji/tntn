@@ -2,24 +2,23 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { Desktop, Tablet, Mobile } from '@styles/mediaQuery';
+import { DeviceQuery } from '@styles/deviceQuery_back';
 import styled from 'styled-components';
 
 import logo from '@assets/images/logo.png';
 
-const DesktopHeaderLogoWrap = styled.div`
-  max-width: 282px;
+const StyledLink = styled(Link)`
+  width: 282px;
   margin: 0 auto;
-`;
 
-const TabletHeaderLogoWrap = styled.div`
-  max-width: 240px;
-  margin: 0 auto;
-`;
+  @media ${({ theme }) => theme.mediaQuery.tablet} {
+    width: 240px;
+  }
 
-const MobileHeaderLogoWrap = styled.div`
-  max-width: 200px;
-  margin: 0 auto;
+  @media ${({ theme }) => theme.mediaQuery.mobile} {
+    width: 200px;
+    margin: 0;
+  }
 `;
 
 const LogoImg = styled.img`
@@ -30,29 +29,9 @@ const LogoImg = styled.img`
 
 const HeaderLogo = () => {
   return (
-    <>
-      <Desktop>
-        <Link to={'/'} title="메인으로 이동">
-          <DesktopHeaderLogoWrap>
-            <LogoImg src={logo} alt="튼튼" />
-          </DesktopHeaderLogoWrap>
-        </Link>
-      </Desktop>
-      <Tablet>
-        <Link to={'/'} title="메인으로 이동">
-          <TabletHeaderLogoWrap>
-            <LogoImg src={logo} alt="튼튼" />
-          </TabletHeaderLogoWrap>
-        </Link>
-      </Tablet>
-      <Mobile>
-        <Link to={'/'} title="메인으로 이동">
-          <MobileHeaderLogoWrap>
-            <LogoImg src={logo} alt="튼튼" />
-          </MobileHeaderLogoWrap>
-        </Link>
-      </Mobile>
-    </>
+    <StyledLink to={'/'} title="메인으로 이동">
+      <LogoImg src={logo} alt="튼튼" />
+    </StyledLink>
   );
 };
 

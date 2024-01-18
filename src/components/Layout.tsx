@@ -1,10 +1,7 @@
-import React from 'react';
+import { WrapperProps } from '@model/component';
 
 import styled from 'styled-components';
 
-type WrapperProps = {
-  children: React.ReactNode;
-};
 const LayoutWrap = styled.div`
   min-height: 100vh;
   display: flex;

@@ -1,8 +1,8 @@
-export interface Props {
-  [key: string]: string;
-}
+// interface Props {
+//   [key: string]: string;
+// }
 
-const colors: Props = {
+const colors = {
   blue: '#0047AB',
   lightblue: '#F0F8FF',
   white: '#fff',
@@ -13,22 +13,33 @@ const colors: Props = {
   lightgray: '#E5E4E2',
 };
 
+const deviceSizes = {
+  tablet: 1023,
+  mobile: 767,
+};
+
+const mediaQuery = {
+  tablet: `(max-width: ${deviceSizes.tablet}px)`,
+  mobile: `(max-width: ${deviceSizes.mobile}px)`,
+};
+
 const containerWidth = {
   desktop: '1280px',
   tablet: '100%',
   mobile: '100%',
 };
 
-const tabletFontSize: Props = {
-  title: '48px',
-  subtitle: '32px',
-  text: '24px',
+const containerPadding = {
+  desktop: '40px',
+  tablet: '40px',
+  mobile: '20px',
 };
 
 const theme = {
   colors,
+  mediaQuery,
   containerWidth,
-  tabletFontSize,
+  containerPadding,
 };
 
 export default theme;
