@@ -1,20 +1,36 @@
-import React from 'react';
-
 import { WrapperProps } from '@model/component';
 
 import styled from 'styled-components';
 
 import Container from '@components/Container';
+import { useLocation } from 'react-router-dom';
 
-const ContentsWrap = styled.main`
+const MainContentsWrap = styled.main`
+  position: relative;
+  flex: 1;
+  // padding: 80px 0;
+`;
+const SubContentsWrap = styled.main`
   flex: 1;
   padding: 80px 0;
 `;
 const Contents = ({ children }: WrapperProps) => {
+  const location = useLocation();
+  const root = location.pathname === '/';
+
   return (
-    <ContentsWrap>
-      <Container>{children}</Container>
-    </ContentsWrap>
+    <>
+      {root ? (
+        <MainContentsWrap>
+          {children}
+          {/* <Container>{children}</Container> */}
+        </MainContentsWrap>
+      ) : (
+        <SubContentsWrap>
+          <Container>{children}</Container>
+        </SubContentsWrap>
+      )}
+    </>
   );
 };
 

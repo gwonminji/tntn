@@ -37,3 +37,11 @@
     transform: rotate(360deg);
   }
 } */
+.swiper-container {
+  height: calc(100vh - 261px);
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
