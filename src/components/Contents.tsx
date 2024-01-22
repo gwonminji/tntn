@@ -8,7 +8,6 @@ import { useLocation } from 'react-router-dom';
 const MainContentsWrap = styled.main`
   position: relative;
   flex: 1;
-  // padding: 80px 0;
 `;
 const SubContentsWrap = styled.main`
   flex: 1;
@@ -21,10 +20,7 @@ const Contents = ({ children }: WrapperProps) => {
   return (
     <>
       {root ? (
-        <MainContentsWrap>
-          {children}
-          {/* <Container>{children}</Container> */}
-        </MainContentsWrap>
+        <MainContentsWrap>{children}</MainContentsWrap>
       ) : (
         <SubContentsWrap>
           <Container>{children}</Container>

@@ -14,11 +14,16 @@ const MainSwiperWrap = styled.div`
   // background: red;
   height: calc(100vh - 261px);
   overflow: hidden;
+  @media ${({ theme }) => theme.mediaQuery.mobile} {
+    height: calc(100vh - 141px);
+  }
 `;
 const SlideImg = styled.img`
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  // object-position: center;
 `;
 
 const MainSwiper = () => {

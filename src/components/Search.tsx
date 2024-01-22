@@ -10,6 +10,10 @@ const SearchWrap = styled.div`
   border-radius: 4px;
   @media ${({ theme }) => theme.mediaQuery.tablet} {
     width: 100%;
+    padding: 0 40px;
+  }
+  @media ${({ theme }) => theme.mediaQuery.mobile} {
+    padding: 0 20px;
   }
 `;
 
@@ -25,6 +29,11 @@ const SearchInput = styled.input`
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   border: 1px solid ${({ theme }) => theme.colors.lightgray};
+  @media ${({ theme }) => theme.mediaQuery.mobile} {
+    height: 40px;
+    line-height: 38px;
+    font-size: 16px;
+  }
 `;
 
 const SearchBtn = styled.button`
@@ -37,6 +46,10 @@ const SearchBtn = styled.button`
     width: 60%;
     height: 60%;
     color: ${({ theme }) => theme.colors.white};
+  }
+  @media ${({ theme }) => theme.mediaQuery.mobile} {
+    width: 40px;
+    height: 40px;
   }
 `;
 

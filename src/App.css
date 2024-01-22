@@ -38,10 +38,10 @@
   }
 } */
 .swiper-container {
-  height: calc(100vh - 261px);
+  height: 100%;
 }
 .swiper-slide {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }

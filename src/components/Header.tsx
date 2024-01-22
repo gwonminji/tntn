@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import { DeviceQuery } from '@styles/deviceQuery_back';
 import { Desktop, Tablet, Mobile } from '@styles/mediaQuery';
 
 import styled from 'styled-components';
@@ -33,7 +32,6 @@ const HeaderInner = styled.div`
 const Btn = styled.button`
   width: 40px;
   height: 40px;
-  // border: 1px solid ${({ theme }) => theme.colors.gray};
   svg {
     width: 100%;
     height: 100%;
