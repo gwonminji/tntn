@@ -11,8 +11,8 @@ import Footer from '@components/Footer';
 import Contents from '@components/Contents';
 
 import Main from '@pages/Main';
-import List from '@pages/List';
-import View from '@pages/View';
+import VideoList from '@pages/VideoList';
+import VideoDetail from '@pages/VideoDetail';
 
 const App = () => {
   return (
@@ -24,8 +24,8 @@ const App = () => {
           <Contents>
             <Routes>
               <Route path="/" element={<Main />}></Route>
-              <Route path="/list" element={<List />}></Route>
-              <Route path="/view" element={<View />}></Route>
+              <Route path="/videoList/:id" element={<VideoList />}></Route>
+              <Route path="/videoDetail/:id" element={<VideoDetail />} />
             </Routes>
           </Contents>
           <Footer />

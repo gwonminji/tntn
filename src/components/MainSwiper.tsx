@@ -5,13 +5,13 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/effect-fade/effect-fade.min.css';
 
 import styled from 'styled-components';
+import '@styles/components/swiper.css';
 
 import img1 from '@assets/images/slide/main1.jpg';
 import img2 from '@assets/images/slide/main2.jpg';
 import img3 from '@assets/images/slide/main3.jpg';
 
 const MainSwiperWrap = styled.div`
-  // background: red;
   height: calc(100vh - 261px);
   overflow: hidden;
   @media ${({ theme }) => theme.mediaQuery.mobile} {
@@ -23,7 +23,6 @@ const SlideImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  // object-position: center;
 `;
 
 const MainSwiper = () => {
@@ -36,9 +35,9 @@ const MainSwiper = () => {
   }[];
 
   const imgs: Imgs = [
-    { id: 0, src: img1, alt: '메인 슬라이드 이미지1' },
-    { id: 0, src: img2, alt: '메인 슬라이드 이미지2' },
-    { id: 0, src: img3, alt: '메인 슬라이드 이미지3' },
+    { id: 1, src: img1, alt: '메인 슬라이드 이미지1' },
+    { id: 2, src: img2, alt: '메인 슬라이드 이미지2' },
+    { id: 3, src: img3, alt: '메인 슬라이드 이미지3' },
   ];
 
   return (

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 const GnbWrap = styled.nav`
@@ -30,7 +31,7 @@ const GnbItem = styled.li`
   text-align: center;
 `;
 
-const GnbText = styled.a`
+const GnbStyledLink = styled(Link)`
   display: inline-block;
   height: 42px;
   line-height: 42px;
@@ -39,6 +40,9 @@ const GnbText = styled.a`
   font-weight: 600;
   letter-spacing: -0.6px;
   &:hover {
+    color: ${({ theme }) => theme.colors.blue};
+  }
+  &.active {
     color: ${({ theme }) => theme.colors.blue};
   }
   @media ${({ theme }) => theme.mediaQuery.tablet} {
@@ -54,35 +58,94 @@ const GnbText = styled.a`
 const Gnb = () => {
   type Menu = {
     id: number;
+    to: string;
     name: string;
+    active: boolean;
+    address: string;
   }[];
+
   const menus: Menu = [
-    { id: 0, name: '체력인증 측정' },
-    { id: 1, name: '운동처방' },
-    { id: 2, name: '근골격계 운동' },
-    { id: 3, name: '생애주기별 표준운동' },
-    { id: 4, name: '목적별 루틴운동' },
-    { id: 5, name: '운동처방 가이드' },
+    {
+      id: 1,
+      to: 'videoList',
+      name: '체력인증 측정',
+      active: false,
+      address: 'TODZ_VDO_FTNS_CERT_I',
+    },
+    {
+      id: 2,
+      to: 'videoList',
+      name: '운동처방',
+      active: false,
+      address: 'TODZ_VDO_TRNG_VIDEO_I',
+    },
+    {
+      id: 3,
+      to: 'videoList',
+      name: '근골격계 운동',
+      active: false,
+      address: 'TODZ_VDO_MSCL_TRNG_I',
+    },
+    {
+      id: 4,
+      to: 'videoList',
+      name: '생애주기별 표준운동',
+      active: false,
+      address: 'TODZ_VDO_STD_FTNS_I',
+    },
+    {
+      id: 5,
+      to: 'videoList',
+      name: '목적별 루틴운동',
+      active: false,
+      address: 'TODZ_VDO_ROUTINE_I',
+    },
+    {
+      id: 6,
+      to: 'videoList',
+      name: '운동처방 가이드',
+      active: false,
+      address: 'TODZ_VDO_TRNG_GUIDE_I',
+    },
   ];
 
-  const [gnb, setGnb] = useState<Menu>([]);
+  const [gnb, setGnb] = useState<Menu | null>(null);
+
   useEffect(() => {
     setGnb(menus);
-    console.log(menus);
+    // console.log(`메뉴 : ${menus}`);
   }, []);
+
+  const location = useLocation();
+  const path = location.pathname;
+
   useEffect(() => {
-    console.log('gnb update', gnb);
-  }, [gnb]);
+    if (gnb) {
+      setGnb(
+        gnb.map((menu) =>
+          path === `/${menu.to}/${menu.id}`
+            ? { ...menu, active: true }
+            : { ...menu, active: false },
+        ),
+      );
+    }
+  }, [path]);
   return (
     <GnbWrap>
       <GnbList>
-        {gnb.map((menu) => (
-          <GnbItem key={menu.id}>
-            <GnbText href="#" title={menu.name}>
-              {menu.name}
-            </GnbText>
-          </GnbItem>
-        ))}
+        {gnb &&
+          gnb.map((menu) => (
+            <GnbItem key={menu.id}>
+              <GnbStyledLink
+                to={`${menu.to}/${menu.id}`}
+                state={{ path: menu.address, paging: 1 }}
+                title={menu.name}
+                className={menu.active ? 'active' : ''}
+              >
+                {menu.name}
+              </GnbStyledLink>
+            </GnbItem>
+          ))}
       </GnbList>
     </GnbWrap>
   );

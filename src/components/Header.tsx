@@ -10,7 +10,11 @@ import { FaBars } from 'react-icons/fa6';
 import { FaXmark } from 'react-icons/fa6';
 
 const HeaderWrap = styled.header`
+  position: sticky;
+  top: 0;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightgray};
+  background: ${({ theme }) => theme.colors.white};
+  z-index: 99;
 `;
 
 const HeaderInner = styled.div`
