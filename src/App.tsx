@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { ThemeProvider } from 'styled-components';
@@ -15,6 +16,13 @@ import VideoList from '@pages/VideoList';
 import VideoDetail from '@pages/VideoDetail';
 
 const App = () => {
+  function setScreenHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  useEffect(() => {
+    setScreenHeight();
+  });
   return (
     <>
       <GlobalStyle />

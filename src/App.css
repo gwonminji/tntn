@@ -1,14 +1,4 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
-:root {
-  --color-blue: #0047ab;
-  --color-lightblue: #f0f8ff;
-  --color-white: #fff;
-  --color-whitesmoke: #f4f4f4;
-  --color-babypowder: #fefefa;
-  --color-black: #222;
-  --color-gray: #999;
-  --color-lightgray: #e5e4e2;
-}
 /* .App {
   text-align: center;
 }

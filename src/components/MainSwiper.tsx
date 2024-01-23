@@ -12,10 +12,12 @@ import img2 from '@assets/images/slide/main2.jpg';
 import img3 from '@assets/images/slide/main3.jpg';
 
 const MainSwiperWrap = styled.div`
-  height: calc(100vh - 261px);
+  // height: calc(100vh - 261px);
+  height: calc(var(--vh-100) - 261px);
   overflow: hidden;
   @media ${({ theme }) => theme.mediaQuery.mobile} {
-    height: calc(100vh - 141px);
+    // height: calc(100vh - 141px);
+    height: calc(var(--vh-100) - 141px);
   }
 `;
 const SlideImg = styled.img`

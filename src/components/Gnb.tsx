@@ -7,7 +7,8 @@ const GnbWrap = styled.nav`
     padding: 80px;
     position: absolute;
     top: 100px;
-    height: calc(100vh - 100px);
+    // height: calc(100vh - 100px);
+    height: calc(var(--vh-100) - 100px);
     left: 0;
     right: 0;
     z-index: 9999;

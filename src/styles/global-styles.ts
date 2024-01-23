@@ -2,6 +2,19 @@ import reset from 'styled-reset';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+      :root {
+        --color-blue: #0047ab;
+        --color-lightblue: #f0f8ff;
+        --color-white: #fff;
+        --color-whitesmoke: #f4f4f4;
+        --color-babypowder: #fefefa;
+        --color-black: #222;
+        --color-gray: #999;
+        --color-lightgray: #e5e4e2;
+
+        --vh: 100%;
+        --vh-100: calc(var(--vh, 1vh) * 100);
+      }
       ${reset}
       * {
         box-sizing: border-box;
