@@ -29,7 +29,7 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
-  // "proxy": "https://apis.data.go.kr",
+  "_proxy": "https://apis.data.go.kr",
   "scripts": {
     "start": "craco start",
     "build": "craco build",
