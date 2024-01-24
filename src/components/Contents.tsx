@@ -12,6 +12,9 @@ const MainContentsWrap = styled.main`
 const SubContentsWrap = styled.main`
   flex: 1;
   padding: 80px 0;
+  @media ${({ theme }) => theme.mediaQuery.tablet} {
+    padding: 60px 0;
+  }
 `;
 const Contents = ({ children }: WrapperProps) => {
   const location = useLocation();

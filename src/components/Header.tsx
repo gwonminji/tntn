@@ -44,7 +44,7 @@ const Btn = styled.button`
 `;
 
 const Header = () => {
-  const [gnb, setGnb] = useState(false);
+  const [gnb, setGnb] = useState<boolean>(false);
 
   const onClickGnb = () => {
     setGnb(!gnb);
@@ -54,14 +54,15 @@ const Header = () => {
     <HeaderWrap>
       <HeaderInner>
         <HeaderLogo />
-        <Desktop>
+        <Gnb show={gnb} onClickGnb={onClickGnb} />
+        {/* <Desktop>
           <Gnb />
         </Desktop>
         <Tablet>
           <Gnb />
-        </Tablet>
+        </Tablet> */}
         <Mobile>
-          {gnb && <Gnb />}
+          {/* {gnb && <Gnb />} */}
           <Btn onClick={onClickGnb}>{gnb ? <FaXmark /> : <FaBars />}</Btn>
         </Mobile>
       </HeaderInner>

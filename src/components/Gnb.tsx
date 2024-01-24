@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const GnbWrap = styled.nav`
   @media ${({ theme }) => theme.mediaQuery.mobile} {
+    display: none;
     padding: 80px;
     position: absolute;
     top: 100px;
@@ -13,6 +14,12 @@ const GnbWrap = styled.nav`
     right: 0;
     z-index: 9999;
     background: ${({ theme }) => theme.colors.lightgray};
+    &.show {
+      display: block;
+    }
+    &.none {
+      display: none;
+    }
   }
 `;
 
@@ -55,8 +62,11 @@ const GnbStyledLink = styled(Link)`
     font-size: 20px;
   }
 `;
-
-const Gnb = () => {
+type Props = {
+  show: boolean;
+  onClickGnb(): void;
+};
+const Gnb = ({ show, onClickGnb }: Props) => {
   type Menu = {
     id: number;
     to: string;
@@ -132,7 +142,7 @@ const Gnb = () => {
     }
   }, [path]);
   return (
-    <GnbWrap>
+    <GnbWrap className={show ? 'show' : ''}>
       <GnbList>
         {gnb &&
           gnb.map((menu) => (
@@ -142,6 +152,7 @@ const Gnb = () => {
                 state={{ path: menu.address, paging: 1 }}
                 title={menu.name}
                 className={menu.active ? 'active' : ''}
+                onClick={onClickGnb}
               >
                 {menu.name}
               </GnbStyledLink>

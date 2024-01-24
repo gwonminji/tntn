@@ -26,10 +26,33 @@ const StyledImg = styled.img`
 
 const TextBox = styled.div`
   padding: 30px;
+  div {
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  span {
+    padding: 0 6px;
+    display: inline-block;
+    font-size: 14px;
+    color: ${({ theme }) => theme.colors.white};
+    height: 20px;
+    line-height: 18px;
+    background: ${({ theme }) => theme.colors.blue};
+  }
   h1 {
-    font-size: 24px;
+    font-size: 20px;
     color: ${({ theme }) => theme.colors.black};
     font-weight: 600;
+    line-height: 1.5;
+  }
+  @media ${({ theme }) => theme.mediaQuery.tablet} {
+    span {
+      font-size: 12px;
+    }
+    h1 {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -38,7 +61,15 @@ type Props = {
 };
 
 const ListItem = ({ item }: Props) => {
-  const { row_num, vdo_ttl_nm, img_file_url, img_file_nm } = item;
+  const {
+    row_num,
+    vdo_ttl_nm,
+    vdo_desc,
+    img_file_url,
+    img_file_nm,
+    img_file_sn,
+    trng_nm,
+  } = item;
   return (
     <ListItemWrap>
       <StyledLink to={`/videoDetail/${row_num}`} state={{ data: item }}>
@@ -46,7 +77,12 @@ const ListItem = ({ item }: Props) => {
           <StyledImg src={img_file_url + img_file_nm} />
         </ImgBox>
         <TextBox>
-          <h1>{vdo_ttl_nm}</h1>
+          <div>
+            <span>{trng_nm}</span>
+          </div>
+          <h1>
+            [{vdo_ttl_nm}]{vdo_desc}({img_file_sn})
+          </h1>
         </TextBox>
       </StyledLink>
     </ListItemWrap>

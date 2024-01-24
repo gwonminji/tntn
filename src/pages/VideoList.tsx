@@ -2,27 +2,28 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import axios from 'axios';
-import { Item } from '@model/video';
+import { Item, TotalCount, PageNo } from '@model/video';
 
 import List from '@components/List';
 import ListItem from '@components/ListItem';
 import Paging from '@components/Paging';
 
 const Menu1 = () => {
-  const [items, setItems] = useState<Item[] | null>(null);
-  const [totalCnt, setTotalCnt] = useState<number>(0);
-  const [page, setPage] = useState<number>(1);
+  const [totalCnt, setTotalCnt] = useState<TotalCount>(0);
+  const [items, setItems] = useState<Item[]>([]);
+  const [page, setPage] = useState<PageNo>(1);
 
   const location = useLocation();
 
   useEffect(() => {
     setPage(location.state.paging);
     fetchData();
-    console.log(location);
+    console.log('location', location);
   }, [location]);
 
   useEffect(() => {
     fetchData();
+    console.log('page', page);
   }, [page]);
 
   const fetchData = () => {
@@ -35,13 +36,15 @@ const Menu1 = () => {
     const NUM_OF_ROWS = 10;
     const RESULT_TYPE = 'json';
     const URL = `${BASE_URL}${PATH}?serviceKey=${AUTH_KEY}&pageNo=${PAGE_NO}&numOfRows=${NUM_OF_ROWS}&resultType=${RESULT_TYPE}`;
+
     axios
       .get(URL)
       .then((response) => {
         if (response.data.response.header.resultCode === '00') {
           setTotalCnt(response.data.response.body.totalCount);
           setItems(response.data.response.body.items.item);
-          console.log('아이템 : ', response.data.response.body.items.item);
+          console.log('response data', response.data);
+          console.log('item', response.data.response.body.items.item);
         }
       })
       .catch((error) => {
@@ -49,23 +52,25 @@ const Menu1 = () => {
       });
   };
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = (page: PageNo) => {
     setPage(page);
   };
 
   return (
     <>
       <List>
-        {items &&
+        {items.length > 0 &&
           items.map((item: Item) => (
             <ListItem key={item.row_num} item={item} />
           ))}
       </List>
-      <Paging
-        page={page}
-        totalCnt={totalCnt}
-        handlePageChange={handlePageChange}
-      />
+      {items.length > 0 && (
+        <Paging
+          page={page}
+          totalCnt={totalCnt}
+          handlePageChange={handlePageChange}
+        />
+      )}
     </>
   );
 };

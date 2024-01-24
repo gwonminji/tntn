@@ -1,12 +1,13 @@
 import Pagination from 'react-js-pagination';
 
-import '@styles/components/pagination.css';
+import '@styles/components/paging.css';
 
 import { Desktop, Tablet, Mobile } from '@styles/mediaQuery';
+import { PageNo, TotalCount } from '@model/video';
 
 type Props = {
-  page: number;
-  totalCnt: number;
+  page: PageNo;
+  totalCnt: TotalCount;
   handlePageChange: (page: number) => void;
 };
 const Paging = ({ page, totalCnt, handlePageChange }: Props) => {
