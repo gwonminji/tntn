@@ -36,7 +36,7 @@ const VideoList = () => {
 
   const fetchData = () => {
     // const HEAD_URL = 'https://apis.data.go.kr';
-    const BASE_URL = '/B551014/SRVC_TODZ_VDO_PKG/';
+    const BASE_URL = 'https://apis.data.go.kr/B551014/SRVC_TODZ_VDO_PKG/';
     const PATH = location.state.path;
     const AUTH_KEY =
       'OA30Kpek0CgUgydasE5bNQvx1AvHivi9DY8W4eCC5jH%2BZpeecOfbDmmggd7ElKdpQc6DF%2FQGx7fslh1DxMVZOg%3D%3D';
