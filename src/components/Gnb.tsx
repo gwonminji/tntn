@@ -66,6 +66,7 @@ type Props = {
   show: boolean;
   onClickGnb(): void;
 };
+
 const Gnb = ({ show, onClickGnb }: Props) => {
   type Menu = {
     id: number;
@@ -149,7 +150,7 @@ const Gnb = ({ show, onClickGnb }: Props) => {
             <GnbItem key={menu.id}>
               <GnbStyledLink
                 to={`${menu.to}/${menu.id}`}
-                state={{ path: menu.address, paging: 1 }}
+                state={{ path: menu.address, paging: 1, keyword: undefined }}
                 title={menu.name}
                 className={menu.active ? 'active' : ''}
                 onClick={onClickGnb}

@@ -37,7 +37,7 @@ const TextBox = styled.div`
     font-size: 14px;
     color: ${({ theme }) => theme.colors.white};
     height: 20px;
-    line-height: 18px;
+    line-height: 20px;
     background: ${({ theme }) => theme.colors.blue};
   }
   h1 {
@@ -47,6 +47,7 @@ const TextBox = styled.div`
     line-height: 1.5;
   }
   @media ${({ theme }) => theme.mediaQuery.tablet} {
+    padding: 20px;
     span {
       font-size: 12px;
     }
@@ -77,9 +78,11 @@ const ListItem = ({ item }: Props) => {
           <StyledImg src={img_file_url + img_file_nm} />
         </ImgBox>
         <TextBox>
-          <div>
-            <span>{trng_nm}</span>
-          </div>
+          {trng_nm !== '' && (
+            <div>
+              <span>{trng_nm}</span>
+            </div>
+          )}
           <h1>
             [{vdo_ttl_nm}]{vdo_desc}({img_file_sn})
           </h1>

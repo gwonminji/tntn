@@ -12,9 +12,15 @@ const DetailHeadWrap = styled.div`
     line-height: 1.5;
   }
   @media ${({ theme }) => theme.mediaQuery.tablet} {
-    padding: 20px 0;
+    padding: 30px 0;
     h1 {
       font-size: 24px;
+    }
+  }
+  @media ${({ theme }) => theme.mediaQuery.mobile} {
+    padding: 20px 0;
+    h1 {
+      font-size: 20px;
     }
   }
 `;

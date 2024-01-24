@@ -14,6 +14,7 @@ import Contents from '@components/Contents';
 import Main from '@pages/Main';
 import VideoList from '@pages/VideoList';
 import VideoDetail from '@pages/VideoDetail';
+import SearchList from '@pages/SearchList';
 
 const App = () => {
   function setScreenHeight() {
@@ -31,9 +32,12 @@ const App = () => {
           <Header />
           <Contents>
             <Routes>
-              <Route path="/" element={<Main />}></Route>
-              <Route path="/videoList/:id" element={<VideoList />}></Route>
+              <Route path="/" element={<Main />} />
+              <Route path="/videoList" element={<VideoList />} />
+              <Route path="/videoList/:id" element={<VideoList />} />
+              <Route path="/videoList/:keyword/:page" element={<VideoList />} />
               <Route path="/videoDetail/:id" element={<VideoDetail />} />
+              {/* <Route path="/searchList" element={<SearchList />} /> */}
             </Routes>
           </Contents>
           <Footer />

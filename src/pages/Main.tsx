@@ -2,7 +2,7 @@ import MainSwiper from '@components/MainSwiper';
 
 import styled from 'styled-components';
 
-import Search from '@components/Search';
+import SearchBar from '@components/SearchBar';
 
 const MainSearchWrap = styled.div`
   position: absolute;
@@ -20,7 +20,7 @@ const Main = () => {
     <>
       <MainSwiper />
       <MainSearchWrap>
-        <Search />
+        <SearchBar />
       </MainSearchWrap>
     </>
   );

@@ -48,7 +48,7 @@ const Header = () => {
 
   const onClickGnb = () => {
     setGnb(!gnb);
-    console.log(gnb);
+    // console.log(gnb);
   };
   return (
     <HeaderWrap>

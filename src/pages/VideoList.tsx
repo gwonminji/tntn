@@ -7,23 +7,31 @@ import { Item, TotalCount, PageNo } from '@model/video';
 import List from '@components/List';
 import ListItem from '@components/ListItem';
 import Paging from '@components/Paging';
+import SearchBar from '@components/SearchBar';
+import SearchHead from '@components/SearchHead';
+import styled from 'styled-components';
 
-const Menu1 = () => {
+const VideoList = () => {
   const [totalCnt, setTotalCnt] = useState<TotalCount>(0);
   const [items, setItems] = useState<Item[]>([]);
   const [page, setPage] = useState<PageNo>(1);
+  const [keyword, setKeyword] = useState<string | undefined>();
 
   const location = useLocation();
 
   useEffect(() => {
+    setKeyword(location.state.keyword);
+  }, [location.state.keyword]);
+
+  useEffect(() => {
     setPage(location.state.paging);
     fetchData();
-    console.log('location', location);
+    // console.log('location', location);
   }, [location]);
 
   useEffect(() => {
     fetchData();
-    console.log('page', page);
+    // console.log('page', page);
   }, [page]);
 
   const fetchData = () => {
@@ -35,8 +43,16 @@ const Menu1 = () => {
     const PAGE_NO = page;
     const NUM_OF_ROWS = 10;
     const RESULT_TYPE = 'json';
-    const URL = `${BASE_URL}${PATH}?serviceKey=${AUTH_KEY}&pageNo=${PAGE_NO}&numOfRows=${NUM_OF_ROWS}&resultType=${RESULT_TYPE}`;
-
+    const KEYWORD = location.state.keyword;
+    let URL = '';
+    if (KEYWORD === undefined) {
+      // console.log('키워드없음');
+      URL = `${BASE_URL}${PATH}?serviceKey=${AUTH_KEY}&pageNo=${PAGE_NO}&numOfRows=${NUM_OF_ROWS}&resultType=${RESULT_TYPE}`;
+    } else {
+      // console.log('키워드있음');
+      URL = `${BASE_URL}${PATH}?serviceKey=${AUTH_KEY}&pageNo=${PAGE_NO}&numOfRows=${NUM_OF_ROWS}&resultType=${RESULT_TYPE}&trng_nm=${KEYWORD}`;
+    }
+    // console.log('URL', URL);
     axios
       .get(URL)
       .then((response) => {
@@ -56,8 +72,18 @@ const Menu1 = () => {
     setPage(page);
   };
 
+  // const SearchBarSticky = styled.div`
+  //   position: sticky;
+  //   top: 201px;
+  //   z-index: 999;
+  //   background: ${({ theme }) => theme.colors.white};
+  // `;
   return (
     <>
+      <SearchBar />
+      {keyword !== undefined && (
+        <SearchHead keyword={keyword} totalCnt={totalCnt} />
+      )}
       <List>
         {items.length > 0 &&
           items.map((item: Item) => (
@@ -75,4 +101,4 @@ const Menu1 = () => {
   );
 };
 
-export default Menu1;
+export default VideoList;
