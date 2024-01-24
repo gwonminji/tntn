@@ -32,7 +32,7 @@ const App = () => {
           <Header />
           <Contents>
             <Routes>
-              <Route path="/" element={<Main />} />
+              <Route path="/tntn" element={<Main />} />
               <Route path="/videoList" element={<VideoList />} />
               <Route path="/videoList/:id" element={<VideoList />} />
               <Route path="/videoList/:keyword/:page" element={<VideoList />} />
