@@ -1,6 +1,4 @@
 import { WrapperProps } from '@model/component';
-
-import { DeviceQuery } from '@styles/deviceQuery_back';
 import styled from 'styled-components';
 
 const ContainerWrap = styled.div`
@@ -18,15 +16,8 @@ const ContainerWrap = styled.div`
     max-width: ${({ theme }) => theme.containerWidth.mobile};
     padding: 0 ${({ theme }) => theme.containerPadding.mobile};
   }
-
-  // ${DeviceQuery.tablet`
-  //   max-width: 100%;
-  // `}
-  // ${DeviceQuery.mobile`
-  //   max-width: 100%;
-  //   padding: 0 20px;
-  // `}
 `;
+
 const Container = ({ children }: WrapperProps) => {
   return <ContainerWrap>{children}</ContainerWrap>;
 };

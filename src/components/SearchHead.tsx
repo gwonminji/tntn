@@ -1,4 +1,4 @@
-import React from 'react';
+import { TotalCount } from '@model/video';
 import styled from 'styled-components';
 
 const SearchHeadWrap = styled.div`
@@ -31,8 +31,9 @@ const SearchHeadWrap = styled.div`
 
 type Props = {
   keyword: string;
-  totalCnt: number;
+  totalCnt: TotalCount;
 };
+
 const SearchHead = ({ keyword, totalCnt }: Props) => {
   return (
     <SearchHeadWrap>

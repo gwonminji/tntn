@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -27,7 +27,6 @@ const GnbList = styled.ul`
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
-
   @media ${({ theme }) => theme.mediaQuery.mobile} {
     max-width: 100%;
     flex-direction: column;
@@ -62,20 +61,21 @@ const GnbStyledLink = styled(Link)`
     font-size: 20px;
   }
 `;
+
 type Props = {
   show: boolean;
   onClickGnb(): void;
 };
 
-const Gnb = ({ show, onClickGnb }: Props) => {
-  type Menu = {
-    id: number;
-    to: string;
-    name: string;
-    active: boolean;
-    address: string;
-  }[];
+type Menu = {
+  id: number;
+  to: string;
+  name: string;
+  active: boolean;
+  address: string;
+}[];
 
+const Gnb = ({ show, onClickGnb }: Props) => {
   const menus: Menu = [
     {
       id: 1,
@@ -125,7 +125,6 @@ const Gnb = ({ show, onClickGnb }: Props) => {
 
   useEffect(() => {
     setGnb(menus);
-    // console.log(`메뉴 : ${menus}`);
   }, []);
 
   const location = useLocation();
@@ -142,6 +141,7 @@ const Gnb = ({ show, onClickGnb }: Props) => {
       );
     }
   }, [path]);
+
   return (
     <GnbWrap className={show ? 'show' : ''}>
       <GnbList>

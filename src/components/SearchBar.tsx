@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
-
 import { FaSearch } from 'react-icons/fa';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SearchBarWrap = styled.form`
   width: 600px;
@@ -59,33 +58,23 @@ const SearchBarBtn = styled.button`
   }
 `;
 
+type State = {
+  keyword: string;
+  path: string;
+  paging: number;
+};
+
 const SearchBar = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState('');
   const [keyword, setKeyword] = useState<string>('');
   const keywordInput = useRef<HTMLInputElement>(null);
+
   const handleKeyword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
     setKeyword(e.target.value);
   };
-  const handleSearch = () => {
-    if (keyword === '') {
-      alert('검색어를 입력해주세요.');
-    }
-    if (keyword !== '') {
-      // alert(`입력한 단어 : ${keyword}`);
-      // location.location.href = 'videoList';
-    }
-    if (keywordInput.current !== null) {
-      keywordInput.current.focus();
-    }
-  };
 
-  type State = {
-    keyword: string;
-    path: string;
-    paging: number;
-  };
   const state: State = {
     keyword: keyword,
     path: 'TODZ_VDO_VIEW_ALL_LIST_I',
@@ -97,12 +86,9 @@ const SearchBar = () => {
 
     if (keyword === '') {
       alert('검색어를 입력해주세요.');
-      // keywordInput.current.focus();
       return;
     }
     if (keyword !== '') {
-      // alert(`입력한 단어 : ${keyword}`);
-      // location.location.href = 'videoList';
       navigate(`/videoList?keyword=${keyword}`, {
         state: state,
       });
@@ -122,12 +108,7 @@ const SearchBar = () => {
         onChange={handleKeyword}
         ref={keywordInput}
       />
-      <SearchBarBtn
-        // to={'videoList'}
-        // state={{ path: '', paging: 1, keyword: keyword }}
-        // onClick={handleSearch}
-        title="검색"
-      >
+      <SearchBarBtn title="검색">
         <FaSearch />
       </SearchBarBtn>
     </SearchBarWrap>

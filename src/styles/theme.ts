@@ -1,8 +1,14 @@
-// interface Props {
-//   [key: string]: string;
-// }
+type StyleStr = {
+  [key: string]: string;
+};
 
-const colors = {
+type StyleNum = {
+  [key: string]: number;
+};
+
+type Theme = object;
+
+const colors: StyleStr = {
   blue: '#0047AB',
   lightblue: '#F0F8FF',
   white: '#fff',
@@ -13,29 +19,29 @@ const colors = {
   lightgray: '#E5E4E2',
 };
 
-const deviceSizes = {
+const deviceSizes: StyleNum = {
   tablet: 1023,
   mobile: 767,
 };
 
-const mediaQuery = {
+const mediaQuery: StyleStr = {
   tablet: `(max-width: ${deviceSizes.tablet}px)`,
   mobile: `(max-width: ${deviceSizes.mobile}px)`,
 };
 
-const containerWidth = {
+const containerWidth: StyleStr = {
   desktop: '1280px',
   tablet: '100%',
   mobile: '100%',
 };
 
-const containerPadding = {
+const containerPadding: StyleStr = {
   desktop: '40px',
   tablet: '40px',
   mobile: '20px',
 };
 
-const theme = {
+const theme: Theme = {
   colors,
   mediaQuery,
   containerWidth,

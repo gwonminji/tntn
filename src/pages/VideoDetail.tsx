@@ -9,7 +9,7 @@ const DetailWrap = styled.div``;
 const Detail = () => {
   const location = useLocation();
   const data = location.state.data;
-  console.log(data);
+
   return (
     <DetailWrap>
       <DetailHead data={data} />

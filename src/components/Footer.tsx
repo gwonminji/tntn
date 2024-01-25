@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import Container from '@components/Container';
 
@@ -20,6 +19,7 @@ const FooterWrap = styled.footer`
     }
   }
 `;
+
 const Footer = () => {
   return (
     <FooterWrap>

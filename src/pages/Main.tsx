@@ -1,7 +1,5 @@
 import MainSwiper from '@components/MainSwiper';
-
 import styled from 'styled-components';
-
 import SearchBar from '@components/SearchBar';
 
 const MainSearchWrap = styled.div`

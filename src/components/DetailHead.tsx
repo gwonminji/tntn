@@ -1,5 +1,4 @@
 import { Item } from '@model/video';
-import React from 'react';
 import styled from 'styled-components';
 
 const DetailHeadWrap = styled.div`
@@ -24,9 +23,11 @@ const DetailHeadWrap = styled.div`
     }
   }
 `;
+
 type Props = {
   data: Item;
 };
+
 const DetailHead = ({ data }: Props) => {
   return (
     <DetailHeadWrap>

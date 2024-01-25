@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-
-import { Desktop, Tablet, Mobile } from '@styles/mediaQuery';
-
+import { Mobile } from '@styles/mediaQuery';
 import styled from 'styled-components';
 import HeaderLogo from '@components/HeaderLogo';
 import Gnb from '@components/Gnb';
-
 import { FaBars } from 'react-icons/fa6';
 import { FaXmark } from 'react-icons/fa6';
 
@@ -23,7 +20,6 @@ const HeaderInner = styled.div`
   justify-content: space-between;
   height: 200px;
   padding: 40px 0 0 0;
-
   @media ${({ theme }) => theme.mediaQuery.mobile} {
     position: relative;
     flex-direction: row;
@@ -48,21 +44,14 @@ const Header = () => {
 
   const onClickGnb = () => {
     setGnb(!gnb);
-    // console.log(gnb);
   };
+
   return (
     <HeaderWrap>
       <HeaderInner>
         <HeaderLogo />
         <Gnb show={gnb} onClickGnb={onClickGnb} />
-        {/* <Desktop>
-          <Gnb />
-        </Desktop>
-        <Tablet>
-          <Gnb />
-        </Tablet> */}
         <Mobile>
-          {/* {gnb && <Gnb />} */}
           <Btn onClick={onClickGnb}>{gnb ? <FaXmark /> : <FaBars />}</Btn>
         </Mobile>
       </HeaderInner>

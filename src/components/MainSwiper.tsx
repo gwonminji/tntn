@@ -1,12 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, EffectFade } from 'swiper';
-
 import 'swiper/swiper.min.css';
 import 'swiper/components/effect-fade/effect-fade.min.css';
-
 import styled from 'styled-components';
 import '@styles/components/swiper.css';
-
 import img1 from '@assets/images/slide/main1.jpg';
 import img2 from '@assets/images/slide/main2.jpg';
 import img3 from '@assets/images/slide/main3.jpg';
@@ -20,6 +17,7 @@ const MainSwiperWrap = styled.div`
     height: calc(var(--vh-100) - 141px);
   }
 `;
+
 const SlideImg = styled.img`
   display: block;
   width: 100%;
@@ -27,14 +25,14 @@ const SlideImg = styled.img`
   object-fit: cover;
 `;
 
+type Imgs = {
+  id: number;
+  src: string;
+  alt: string;
+}[];
+
 const MainSwiper = () => {
   SwiperCore.use([Autoplay, EffectFade]);
-
-  type Imgs = {
-    id: number;
-    src: string;
-    alt: string;
-  }[];
 
   const imgs: Imgs = [
     { id: 1, src: img1, alt: '메인 슬라이드 이미지1' },

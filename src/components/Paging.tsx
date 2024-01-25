@@ -1,7 +1,5 @@
 import Pagination from 'react-js-pagination';
-
 import '@styles/components/paging.css';
-
 import { Desktop, Tablet, Mobile } from '@styles/mediaQuery';
 import { PageNo, TotalCount } from '@model/video';
 
