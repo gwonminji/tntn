@@ -128,19 +128,21 @@ const Gnb = ({ show, onClickGnb }: Props) => {
   }, []);
 
   const location = useLocation();
-  const path = location.pathname;
+  const key = location.key;
+  const pathname = location.pathname;
+  const search = location.search;
 
   useEffect(() => {
     if (gnb) {
       setGnb(
         gnb.map((menu) =>
-          path === `/${menu.to}/${menu.id}`
+          pathname === `/${menu.to}` && search === `?menuId=${menu.id}`
             ? { ...menu, active: true }
             : { ...menu, active: false },
         ),
       );
     }
-  }, [path]);
+  }, [key]);
 
   return (
     <GnbWrap className={show ? 'show' : ''}>
@@ -149,8 +151,8 @@ const Gnb = ({ show, onClickGnb }: Props) => {
           gnb.map((menu) => (
             <GnbItem key={menu.id}>
               <GnbStyledLink
-                to={`${menu.to}/${menu.id}`}
-                state={{ path: menu.address, paging: 1, keyword: undefined }}
+                to={`${menu.to}?menuId=${menu.id}`}
+                state={{ path: menu.address, page: 1, keyword: undefined }}
                 title={menu.name}
                 className={menu.active ? 'active' : ''}
                 onClick={onClickGnb}

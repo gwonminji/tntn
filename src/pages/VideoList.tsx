@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Item, TotalCount, PageNo } from '@model/video';
@@ -21,7 +21,7 @@ const VideoList = () => {
   }, [location.state.keyword]);
 
   useEffect(() => {
-    setPage(location.state.paging);
+    setPage(location.state.page);
     fetchData();
   }, [location]);
 
