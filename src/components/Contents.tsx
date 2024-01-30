@@ -19,6 +19,7 @@ const SubContentsWrap = styled.main`
 const Contents = ({ children }: WrapperProps) => {
   const location = useLocation();
   const root = location.pathname === '/tntn';
+  console.log(location);
 
   return (
     <>
