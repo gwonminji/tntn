@@ -22,7 +22,7 @@ const LogoImg = styled.img`
 
 const HeaderLogo = () => {
   return (
-    <StyledLink to={'/tntn'} title="메인으로 이동">
+    <StyledLink to={'/tntn/'} title="메인으로 이동">
       <LogoImg src={logo} alt="튼튼" />
     </StyledLink>
   );
