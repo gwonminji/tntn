@@ -103,7 +103,7 @@ const SearchBar = () => {
     <SearchBarWrap onSubmit={onSubmit}>
       <SearchBarInput
         type="text"
-        placeholder="어떤 운동을 찾으시나요?"
+        placeholder="어떤 운동을 찾으시나요?(ex. 어깨)"
         value={input}
         onChange={handleKeyword}
         ref={keywordInput}

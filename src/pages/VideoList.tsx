@@ -7,6 +7,7 @@ import ListItem from '@components/ListItem';
 import Paging from '@components/Paging';
 import SearchBar from '@components/SearchBar';
 import SearchHead from '@components/SearchHead';
+import Loading from '@components/Loading';
 
 const VideoList = () => {
   const [totalCnt, setTotalCnt] = useState<TotalCount>(0);
@@ -72,12 +73,23 @@ const VideoList = () => {
       {keyword !== undefined && (
         <SearchHead keyword={keyword} totalCnt={totalCnt} />
       )}
-      <List>
-        {items.length > 0 &&
-          items.map((item: Item) => (
+      {items.length > 0 ? (
+        <List>
+          {items.map((item: Item) => (
             <ListItem key={item.row_num} item={item} />
           ))}
-      </List>
+        </List>
+      ) : (
+        <Loading />
+      )}
+      {/* <Loading /> */}
+      {/* <List>
+        {items.length > 0
+          ? items.map((item: Item) => (
+              <ListItem key={item.row_num} item={item} />
+            ))
+          : 'loading'}
+      </List> */}
       {items.length > 0 && (
         <Paging
           page={page}
