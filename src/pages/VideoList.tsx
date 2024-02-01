@@ -31,6 +31,7 @@ const VideoList = () => {
 
   const fetchData = () => {
     // const HEAD_URL = 'https://apis.data.go.kr';
+    const PROXY_URL = 'https://cors-anywhere.herokuapp.com';
     const BASE_URL = 'https://apis.data.go.kr/B551014/SRVC_TODZ_VDO_PKG/';
     const PATH = location.state.path;
     const AUTH_KEY =

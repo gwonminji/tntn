@@ -61,7 +61,7 @@ const SearchBarBtn = styled.button`
 type State = {
   keyword: string;
   path: string;
-  paging: number;
+  page: number;
 };
 
 const SearchBar = () => {
@@ -78,7 +78,7 @@ const SearchBar = () => {
   const state: State = {
     keyword: keyword,
     path: 'TODZ_VDO_VIEW_ALL_LIST_I',
-    paging: 1,
+    page: 1,
   };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
