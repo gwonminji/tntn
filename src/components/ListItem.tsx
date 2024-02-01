@@ -73,7 +73,7 @@ const ListItem = ({ item }: Props) => {
   } = item;
   return (
     <ListItemWrap>
-      <StyledLink to={`/videoDetail/${row_num}`} state={{ data: item }}>
+      <StyledLink to={`/videoDetail?videoId=${row_num}`} state={{ data: item }}>
         <ImgBox>
           <StyledImg src={img_file_url + img_file_nm} />
         </ImgBox>
