@@ -62,6 +62,7 @@ $ npm start
 
 ## 아키텍쳐
 ### 디렉토리 구조
+```
 ┣📦public
 ┃ ┣ 📜favicon.ico
 ┃ ┣ 📜index.html
@@ -120,3 +121,4 @@ $ npm start
     ┣ 📜react-app-env.d.ts
     ┣ 📜reportWebVitals.ts
     ┗ 📜setupTests.ts
+```
