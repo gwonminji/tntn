@@ -2,6 +2,7 @@
 <br>
 <div align="center"><img src="https://github.com/gwonminji/tntn/assets/59082464/247e7061-e7bb-40e6-8599-2a4de14b0b5d"></div>
 <br>
+
 ## 개발기간
 2022.01 ~ 진행중
 <br>
@@ -28,6 +29,7 @@ $ npm install
 $ npm start
 ```
 <br>
+
 ## Stacks
 ### Environment
 <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
