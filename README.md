@@ -37,8 +37,32 @@ $ npm start
 <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/styled%20components-DB7093?style=for-the-badge&logo=styled%20components&logoColor=white"> <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 <br><br>
 ## 화면 구성
-![main](https://github.com/gwonminji/tntn/assets/59082464/fba825bd-4c26-491c-a393-be8ae4c936ee)
-메인 페이지
+<table>
+  <tr>
+    <td>![main](https://github.com/gwonminji/tntn/assets/59082464/fba825bd-4c26-491c-a393-be8ae4c936ee)</td>
+    <td>![list](https://github.com/gwonminji/tntn/assets/59082464/c0391d3b-7a7e-494c-930b-e13a89aef151)</td>
+    <td>메인 페이지</td>
+    <td>운동 영상 목록 페이지</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 ![list](https://github.com/gwonminji/tntn/assets/59082464/c0391d3b-7a7e-494c-930b-e13a89aef151)
 운동 영상 목록 페이지
 ![view](https://github.com/gwonminji/tntn/assets/59082464/fb0d7ee3-dc82-4805-9fe9-ccadbfa32859)
