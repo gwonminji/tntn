@@ -62,3 +62,61 @@ $ npm start
 
 ## 아키텍쳐
 ### 디렉토리 구조
+┣📦public
+┃ ┣ 📜favicon.ico
+┃ ┣ 📜index.html
+┃ ┣ 📜logo192.png
+┃ ┣ 📜logo512.png
+┃ ┣ 📜manifest.json
+┃ ┗ 📜robots.txt
+┗📦src
+    ┣ 📂assets
+    ┃ ┣ 📂images
+    ┃ ┃ ┣ 📂slide
+    ┃ ┃ ┃ ┣ 📜main1.jpg
+    ┃ ┃ ┃ ┣ 📜main2.jpg
+    ┃ ┃ ┃ ┗ 📜main3.jpg
+    ┃ ┃ ┗ 📜logo.png
+    ┃ ┗ 📂lottie
+    ┃ ┃ ┗ 📜loading.json
+    ┣ 📂components
+    ┃ ┣ 📜Container.tsx
+    ┃ ┣ 📜Contents.tsx
+    ┃ ┣ 📜DetailBody.tsx
+    ┃ ┣ 📜DetailHead.tsx
+    ┃ ┣ 📜Footer.tsx
+    ┃ ┣ 📜Gnb.tsx
+    ┃ ┣ 📜Header.tsx
+    ┃ ┣ 📜HeaderLogo.tsx
+    ┃ ┣ 📜Layout.tsx
+    ┃ ┣ 📜List.tsx
+    ┃ ┣ 📜ListItem.tsx
+    ┃ ┣ 📜Loading.tsx
+    ┃ ┣ 📜MainSwiper.tsx
+    ┃ ┣ 📜Paging.tsx
+    ┃ ┣ 📜ScrollToTop.ts
+    ┃ ┣ 📜SearchBar.tsx
+    ┃ ┗ 📜SearchHead.tsx
+    ┣ 📂model
+    ┃ ┣ 📜component.ts
+    ┃ ┗ 📜video.ts
+    ┣ 📂pages
+    ┃ ┣ 📜Main.tsx
+    ┃ ┣ 📜VideoDetail.tsx
+    ┃ ┗ 📜VideoList.tsx
+    ┣ 📂styles
+    ┃ ┣ 📂components
+    ┃ ┃ ┣ 📜paging.css
+    ┃ ┃ ┗ 📜swiper.css
+    ┃ ┣ 📜global-styles.ts
+    ┃ ┣ 📜mediaQuery.tsx
+    ┃ ┗ 📜theme.ts
+    ┣ 📜App.css
+    ┣ 📜App.test.tsx
+    ┣ 📜App.tsx
+    ┣ 📜index.css
+    ┣ 📜index.tsx
+    ┣ 📜logo.svg
+    ┣ 📜react-app-env.d.ts
+    ┣ 📜reportWebVitals.ts
+    ┗ 📜setupTests.ts
