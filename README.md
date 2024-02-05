@@ -7,7 +7,7 @@
 2022.01 ~ 진행중
 
 ## 프로젝트 정보
-React + Typescript를 학습하기 위해 만들어보면서 익히는 개인 웹 포트폴리오
+React + Typescript를 학습하기 위해 만들어보면서 익히는 개인 토이 프로젝트
 
 ## 배포 주소
 https://gwonminji.github.io/tntn/
