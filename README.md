@@ -27,6 +27,7 @@ $ npm start
 ```
 <br/>
 ## Stacks
+
 ### Environment
 <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
 
@@ -37,22 +38,43 @@ $ npm start
 <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/styled%20components-DB7093?style=for-the-badge&logo=styled%20components&logoColor=white"> <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 <br/>
 ## 화면 구성
+![mo-main](https://github.com/gwonminji/tntn/assets/59082464/3a8237b8-c142-493e-9a33-dd75a180606a)
+![mo-list](https://github.com/gwonminji/tntn/assets/59082464/989e1f3a-9ffd-483d-b657-38ece732fba0)
+![mo-view](https://github.com/gwonminji/tntn/assets/59082464/0adacc75-dbd9-4d05-948f-1773aeb923f0)
+![mo-search](https://github.com/gwonminji/tntn/assets/59082464/2451a978-4422-499f-a05a-82ae96e10a20)
+
 <table>
   <tr>
     <td><img src="https://github.com/gwonminji/tntn/assets/59082464/fba825bd-4c26-491c-a393-be8ae4c936ee"></td>
-    <td><img src="https://github.com/gwonminji/tntn/assets/59082464/c0391d3b-7a7e-494c-930b-e13a89aef151"></td>
+    <td><img src="https://github.com/gwonminji/tntn/assets/59082464/3a8237b8-c142-493e-9a33-dd75a180606a"></td>
   </tr>
   <tr>
     <td>PC - 메인 페이지</td>
+    <td>MOBILE - 메인 페이지</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/gwonminji/tntn/assets/59082464/c0391d3b-7a7e-494c-930b-e13a89aef151"></td>
+    <td><img src="https://github.com/gwonminji/tntn/assets/59082464/989e1f3a-9ffd-483d-b657-38ece732fba0"></td>
+  </tr>
+  <tr>
     <td>PC - 운동 영상 목록 페이지</td>
+    <td>MOBILE - 운동 영상 목록 페이지</td>
   </tr>
   <tr>
     <td><img src="https://github.com/gwonminji/tntn/assets/59082464/fb0d7ee3-dc82-4805-9fe9-ccadbfa32859"></td>
-    <td><img src="https://github.com/gwonminji/tntn/assets/59082464/1b8e4572-d2f9-4f6d-92c5-f2211a2bee91"></td>
+    <td><img src="https://github.com/gwonminji/tntn/assets/59082464/0adacc75-dbd9-4d05-948f-1773aeb923f0"></td>
   </tr>
   <tr>
     <td>PC - 운동 영상 상세 페이지</td>
+    <td>MOBILE - 운동 영상 상세 페이지</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/gwonminji/tntn/assets/59082464/1b8e4572-d2f9-4f6d-92c5-f2211a2bee91"></td>
+    <td><img src="https://github.com/gwonminji/tntn/assets/59082464/2451a978-4422-499f-a05a-82ae96e10a20"></td>
+  </tr>
+  <tr>
     <td>PC - 운동 영상 검색 결과 페이지</td>
+    <td>MOBILE - 운동 영상 검색 결과 페이지</td>
   </tr>
 </table>
 <br/>
