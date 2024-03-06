@@ -49,7 +49,7 @@ $ npm start
   </thead>
   <tbody>
     <tr>
-      <td><img src="https://github.com/gwonminji/tntn/assets/59082464/fba825bd-4c26-491c-a393-be8ae4c936ee"></td>
+      <td><img src="https://github.com/gwonminji/tntn/assets/59082464/fba825bd-4c26-491c-a393-be8ae4c936ee"><img src="https://github.com/gwonminji/tntn/assets/59082464/1cc05390-ad72-4b6f-ae8d-074ea6002c5e"></td>
       <td><img src="https://github.com/gwonminji/tntn/assets/59082464/3a8237b8-c142-493e-9a33-dd75a180606a"></td>
     </tr>
     <tr>
